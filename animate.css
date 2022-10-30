@@ -1,0 +1,197 @@
+html{
+   width: 100%;
+   height: 100%;
+}
+body{
+   background: linear-gradient(90deg, red, yellow);
+   color: rgba(0, 0, 0, 0.6);
+   font-family: "roboto", sans-serif;
+   font-size: 14px;
+   line-height: 1.6em;
+   -webkit-font-smoothing: antialiased;
+   -moz-font-smoothing: grayscale;
+}
+.overlay, .form-panel.one:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    background: white;
+    width: 100%;
+    height: 100%;
+}
+.form{
+    z-index: 15;
+    position: relative;
+    background: #ffffff;
+    width: 600px;
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin: 100px auto 10px;
+    overflow: hidden;
+}
+.form-toggle{
+    z-index: 10;
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    background: #ffffff;
+    width: 60px;
+    border-radius: 100%;
+    transform-origin: center;
+    transform: translate(0, -25%) scale(0);
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.form-toggle:before, .form-panel.one:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 4px;
+    background: #f49842;
+    transform: translate(-50%, -50%);
+}
+.form-panel.one:before{
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.form-panel.one:after{
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.form-panel.one:visible{
+    transform: translate(0, -25%) scale(1);
+    opacity: 1;
+}
+.form-groupe{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 0 20px;
+}
+.form-groupe:last-child{
+    margin: 0;
+}
+.form-groupe label{
+    display: block;
+    margin: 0 0 10px;
+    color: black;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+.two .form-groupe label{
+    color: #ffffff;
+
+}
+.form-groupe input{
+    outline: none;
+    display: block;
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    color: rgba(0, 0, 0, 0.6);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    line-height: inherit;
+    transition: 0.3s ease;
+}
+.form-groupe input:focus{
+    color: rgba(0, 0, 0, 0.8);
+}
+.two .form-groupe input{
+    color: #ffffff;
+}
+.two .form-groupe input:focus{
+    color: #ffffff;
+}
+.form-groupe button{
+    outline: none;
+    background: #f49842;
+    width: 100%;
+    border: 0;
+    border-radius: 4px;
+    padding: 12px 20px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    line-height: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.two .form-groupe button{
+    background: #ffffff;
+    color: #f49842;
+}
+
+.form-groupe .form-remember{
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+}
+.form-groupe .form-remember input[type=checkbox]{
+    display: inline-block;
+    width: auto;
+    margin: 0 10px 0 0;
+}
+.form-groupe .form-recovery{
+    color: #057270;
+    font-size: 12px ;
+    text-decoration: none;
+}
+.form-panel{
+    padding: 60px calc(5% + 60px) 60px 60px;
+    box-sizing: border-box;
+}
+.form-panel.one:before{
+    content: "";
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s ease;
+}
+.form-panel.one.hidden:before{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+.form-panel.two{
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 95%;
+    background: #f49842;
+    width: 100%;
+    min-height: 100%;
+    padding: 60px calc(10% + 60px)60px 60px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.form-panel.two:before, .form-panel.two:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 1.5%;
+    background: white;
+    height: 30px;
+    width: 2px;
+    transition: 0.3s ease;
+}
+.form-panel.two:after{
+    left: 3%;
+}
+.form-panel.two:hover{
+    left: 91%;
+}
